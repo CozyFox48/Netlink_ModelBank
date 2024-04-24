@@ -119,6 +119,7 @@ export const AuthProvider = (props) => {
           id: response.data.id,
           username: response.data.username,
           token: response.data.token,
+          user_type: response.data.user_type,
           bankNumber: response.data.bankNumber,
           balance_eur: response.data.balance_eur,
           balance_usd: response.data.balance_usd,

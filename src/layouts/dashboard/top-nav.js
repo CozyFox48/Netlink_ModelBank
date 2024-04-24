@@ -16,7 +16,8 @@ const TOP_NAV_HEIGHT = 64;
 
 export const TopNav = (props) => {
   const [alignment, setAlignment] = useState('');
-
+  const userStr = localStorage.getItem("user");
+  const user = JSON.parse(userStr);
   const router = useRouter();
   const accountPopover = usePopover();
 
@@ -24,6 +25,8 @@ export const TopNav = (props) => {
     setAlignment(newAlignment);
     if (newAlignment == "overview") {
       router.push('/')
+    } else if (newAlignment === "admin") {
+      router.push('/admin')
     } else {
       router.push('/transaction')
     }
@@ -85,6 +88,12 @@ export const TopNav = (props) => {
             >
               Transactions
             </ToggleButton>
+            {user?.user_type === 'user' ? <></> :
+              <ToggleButton value="admin"
+                aria-label="centered"
+              >
+                Administrator
+              </ToggleButton>}
           </ToggleButtonGroup>
           <Avatar
             onClick={accountPopover.handleOpen}

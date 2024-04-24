@@ -46,7 +46,10 @@ const Page = () => {
         auth.signUp(values.bankNumber, values.name, values.password).then(
           response => {
             setAlert({ message: response.data.message, successful: true, open: true });
-            router.push('/auth/login');
+            setTimeout(() => {
+              router.push('/auth/login');
+            }, 3000);
+
           },
           error => {
             setAlert({

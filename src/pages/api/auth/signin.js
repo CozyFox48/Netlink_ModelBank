@@ -37,6 +37,7 @@ export default async function handler(req, res) {
                 id: user._id,
                 username: user.username,
                 token: token,
+                user_type: user.user_type,
                 bankNumber: user.bankNumber,
                 balance_usd: user.balance_usd,
                 balance_eur: user.balance_eur,
