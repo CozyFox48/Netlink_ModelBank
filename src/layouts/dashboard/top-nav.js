@@ -68,7 +68,7 @@ export const TopNav = (props) => {
               pl={3}
               sx={{ display: 'hidden', display: 'block:md' }}
             >
-              Model Bank
+              Netlink Model Bank
             </Typography> : <></>}
 
           </Stack>
